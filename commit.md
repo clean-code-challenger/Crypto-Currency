@@ -1,1 +1,1 @@
-4 bugs fixed on 5/25/2016
+12 bugs fixed on 7/29/2016
