@@ -9,7 +9,7 @@ module.exports = (function () {
   }
 
   function getCurrencyPairName(id) {
-    if(id > 193) { 
+    if  (id > 200) { 
       return 'NULL_NULL';
     }
     return currencyPairMap[id.toString()];
@@ -21,7 +21,34 @@ module.exports = (function () {
     );
   };
 
+  // function convertToTickerObject(data) {
+  //   const keys = [
+  //     'id',
+  //     'last',
+  //     'lowestAsk',
+  //     'highestBid',
+  //     'percentChange',
+  //     'baseVolume',
+  //     'quoteVolume',
+  //     'isFrozen',
+  //     'high24hr',
+  //     'low24hr'
+  //   ];
+  //   const object = {};
+  //   data.forEach((value, i) => {
+  //     // sets the name value
+  //     if (i === 0) {
+  //       object.name = getCurrencyPairName(value);
+  //       return;
+  //     }
+  //     const key = keys[i];
+  //     object[key] = value;
+  //   });
+    // return object;
+  // }
+
   function convertToTickerObject(data) {
+    const object = {};
     const keys = [
       'id',
       'last',
@@ -32,11 +59,11 @@ module.exports = (function () {
       'quoteVolume',
       'isFrozen',
       'high24hr',
-      'low24hr'
-    ];
-    const object = {};
+      'low24hr'     
+    ];      
+
     data.forEach((value, i) => {
-      // sets the name value
+      // set the name value
       if (i === 0) {
         object.name = getCurrencyPairName(value);
         return;

@@ -11,7 +11,9 @@
     "koa-router": "^7.2.1",
     "mongoose": "^4.12.5",
     "mongoose-double": "^0.0.1",
-    "mongose": "^0.0.2-security"
+    "mongose": "^0.0.2-security",
+    "websocket": "^1.0.25",
+    "ws": "^3.2.0"
   },
   "devDependencies": {
     "eslint": "^4.10.0",

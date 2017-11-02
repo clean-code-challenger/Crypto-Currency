@@ -21,19 +21,19 @@ const ExchangeRate = new Schema({
   }
 });
 
-// ExchangeRate.index({name: 1}, {name: 'rateTypeIdentifier', unique: true});
+ExchangeRate.index({name: 1}, {name: 'rateTypeIdentifier', unique: true});
 
-// // only for temporary use
-// ExchangeRate.statics.drop = function () {
-//   return this.remove({}).exec();
-// };
+// only for temporary use
+ExchangeRate.statics.drop = function () {
+  return this.remove({}).exec();
+};
 
-// ExchangeRate.statics.updateTicker = function(name, data) {
-//   return this.findOneAndUpdate({name}, {
-//     ...data,
-//     lastUpdated: new Date()
-//   }, { upsert: false, new: true }).exec();
-// };
+ExchangeRate.statics.updateTicker = function(name, data) {
+  return this.findOneAndUpdate({name}, {
+    ...data,
+    lastUpdated: new Date()
+  }, { upsert: false, new: true }).exec();
+};
 
 // ExchangeRate.statics.showAll = function() {
 //   return this.find({});
